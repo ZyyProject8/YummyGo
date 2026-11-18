@@ -10,10 +10,6 @@ Website sistem pemesanan online kantin pintar modern, efisien, dan profesional. 
 * **Masuk (Login) & Daftar Baru (Register)**:
   * Siswa dapat login menggunakan **NIS (Nomor Induk Siswa)** atau Nama Siswa.
   * Pendaftaran siswa baru lengkap dengan Nama Lengkap, NIS, Kelas / Jurusan (misal: *XII RPL 1*), No. WhatsApp, dan Kata Sandi.
-* **Akun Demo Cepat (1-Klik)** untuk Pengujian Langsung:
-  * 🧑 **Budi Santoso** — NIS: `202401` (XII RPL 1)
-  * 👩 **Siti Rahmawati** — NIS: `202402` (XI MIPA 2)
-  * 🧑 **Rian Pratama** — NIS: `202403` (X DKV 3)
   * *Kata sandi default siswa:* `123`
 * **Keuntungan Akun Siswa**:
   * Data identitas (Nama Siswa & Kelas) **otomatis terisi saat checkout keranjang**.
