@@ -142,65 +142,61 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
       
       {/* Student Dashboard Top Navigation */}
       <header className="sticky top-0 z-40 bg-white border-b border-slate-200/90 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
             
             {/* Left: Logo & Back to Portal Button */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <button
                 type="button"
                 onClick={onBackToLanding}
-                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors mr-1"
+                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
                 title="Kembali ke Halaman Awal"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
 
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2">
                 <img
                   src="/yummy.jpg"
                   alt="YummyGo!"
-                  className="w-8 h-8 rounded-lg object-cover border border-slate-200"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg object-cover border border-slate-200 shrink-0"
                 />
-                <div>
-                  <span className="font-extrabold text-base tracking-tight text-slate-900 block leading-tight">
-                    Yummy<span className="text-emerald-600">Go!</span>
-                  </span>
-                  <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider hidden md:block">
-                    Dashboard Siswa
-                  </span>
-                </div>
+                <span className="font-extrabold text-base tracking-tight text-slate-900 block leading-tight">
+                  Yummy<span className="text-emerald-600">Go!</span>
+                </span>
+                <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider hidden lg:block ml-1">
+                  Dashboard Siswa
+                </span>
               </div>
             </div>
 
-            {/* Center: 3 Clean Integrated Tabs (Menu, Keranjang, Pesanan) */}
-            <nav className="flex items-center gap-1 sm:gap-2 bg-slate-100/80 p-1 rounded-xl text-xs font-semibold">
+            {/* Center: 3 Clean Integrated Tabs (Desktop Only) */}
+            <nav className="hidden md:flex items-center gap-1.5 bg-slate-100/90 p-1 rounded-xl text-xs font-semibold">
               <button
                 type="button"
                 onClick={() => setActiveTab('MENU')}
-                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeTab === 'MENU'
                     ? 'bg-white text-slate-900 shadow-xs font-bold'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <Utensils className="w-3.5 h-3.5 shrink-0" />
-                <span className="hidden sm:inline">Daftar Menu</span>
-                <span className="sm:hidden">Menu</span>
+                <span>Daftar Menu</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveTab('CART')}
-                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeTab === 'CART'
                     ? 'bg-white text-slate-900 shadow-xs font-bold'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
-                <span className="hidden sm:inline">Keranjang</span>
-                <span className="sm:hidden">Keranjang</span>
+                <span>Keranjang</span>
                 {cartCount > 0 && (
                   <span className="inline-flex items-center justify-center min-w-[18px] h-4.5 px-1 rounded-full text-[10px] font-extrabold bg-emerald-600 text-white">
                     {cartCount}
@@ -211,15 +207,14 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveTab('ORDERS')}
-                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeTab === 'ORDERS'
                     ? 'bg-white text-slate-900 shadow-xs font-bold'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <Clock className="w-3.5 h-3.5 shrink-0" />
-                <span className="hidden sm:inline">Pesanan Saya</span>
-                <span className="sm:hidden">Pesanan</span>
+                <span>Pesanan Saya</span>
                 {activeOrders.length > 0 && (
                   <span className="inline-flex items-center justify-center min-w-[18px] h-4.5 px-1 rounded-full text-[10px] font-extrabold bg-amber-500 text-white">
                     {activeOrders.length}
@@ -229,12 +224,12 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             </nav>
 
             {/* Right: Info Siswa (Tanpa Foto Profil) */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 shrink-0">
               {currentStudent ? (
-                <div className="flex items-center gap-2 text-xs">
-                  <div className="hidden sm:block text-right">
-                    <p className="font-bold text-slate-800 leading-tight">{currentStudent.name}</p>
-                    <p className="text-[10px] text-slate-400 font-medium">{currentStudent.studentClass}</p>
+                <div className="flex items-center gap-1.5 sm:gap-2 text-xs">
+                  <div className="text-right max-w-[120px] sm:max-w-[160px] truncate">
+                    <p className="font-bold text-slate-800 leading-tight truncate">{currentStudent.name}</p>
+                    <p className="text-[10px] text-slate-400 font-medium truncate">{currentStudent.studentClass}</p>
                   </div>
                   <button
                     type="button"
@@ -242,7 +237,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                       logoutStudent();
                       onBackToLanding();
                     }}
-                    className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg text-slate-500 hover:text-rose-600 hover:bg-rose-50 border border-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                    className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg text-slate-500 hover:text-rose-600 hover:bg-rose-50 border border-slate-200 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
                     title="Keluar / Ganti Siswa"
                   >
                     <LogOut className="w-3.5 h-3.5" />
@@ -262,17 +257,71 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
 
           </div>
         </div>
+
+        {/* Mobile Tab Navigation Bar (Row 2, Mobile Only) */}
+        <div className="md:hidden px-3 pb-2 pt-0.5 border-t border-slate-100">
+          <nav className="grid grid-cols-3 gap-1 bg-slate-100/90 p-1 rounded-xl text-xs font-semibold w-full">
+            <button
+              type="button"
+              onClick={() => setActiveTab('MENU')}
+              className={`flex items-center justify-center gap-1.5 py-2 px-1 rounded-lg transition-all cursor-pointer ${
+                activeTab === 'MENU'
+                  ? 'bg-white text-slate-900 shadow-xs font-bold'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Utensils className="w-3.5 h-3.5 shrink-0" />
+              <span>Menu</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab('CART')}
+              className={`flex items-center justify-center gap-1.5 py-2 px-1 rounded-lg transition-all cursor-pointer ${
+                activeTab === 'CART'
+                  ? 'bg-white text-slate-900 shadow-xs font-bold'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
+              <span>Keranjang</span>
+              {cartCount > 0 && (
+                <span className="inline-flex items-center justify-center min-w-[18px] h-4.5 px-1 rounded-full text-[10px] font-extrabold bg-emerald-600 text-white">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab('ORDERS')}
+              className={`flex items-center justify-center gap-1.5 py-2 px-1 rounded-lg transition-all cursor-pointer ${
+                activeTab === 'ORDERS'
+                  ? 'bg-white text-slate-900 shadow-xs font-bold'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Clock className="w-3.5 h-3.5 shrink-0" />
+              <span>Pesanan</span>
+              {activeOrders.length > 0 && (
+                <span className="inline-flex items-center justify-center min-w-[18px] h-4.5 px-1 rounded-full text-[10px] font-extrabold bg-amber-500 text-white">
+                  {activeOrders.length}
+                </span>
+              )}
+            </button>
+          </nav>
+        </div>
       </header>
 
       {/* Main Content Area based on Tab */}
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
+      <main className="flex-1 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 w-full">
         
         {/* ================= TAB 1: DAFTAR MENU ================= */}
         {activeTab === 'MENU' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             
             {/* Welcome banner strip for student */}
-            <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+            <div className="bg-white rounded-xl border border-slate-200 p-3.5 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
               <div>
                 <h1 className="text-lg sm:text-xl font-bold text-slate-900">
                   Daftar Menu Makanan &amp; Minuman
@@ -334,8 +383,8 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
 
               </div>
 
-              {/* Category tabs */}
-              <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none pt-1">
+              {/* Category tabs: Responsive full-width grid on mobile, flex on desktop */}
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2 w-full sm:flex sm:items-center sm:w-auto pt-1">
                 {CATEGORIES.map((cat) => {
                   const count = cat === 'Semua' 
                     ? products.length 
@@ -345,14 +394,14 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                       key={cat}
                       type="button"
                       onClick={() => setSelectedCategory(cat)}
-                      className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+                      className={`flex items-center justify-center gap-1.5 py-2 px-1 sm:px-3.5 sm:py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                         selectedCategory === cat
                           ? 'bg-slate-900 text-white shadow-xs'
                           : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                       }`}
                     >
-                      <span>{cat}</span>
-                      <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold leading-none ${
+                      <span className="truncate">{cat}</span>
+                      <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold leading-none shrink-0 ${
                         selectedCategory === cat
                           ? 'bg-white/20 text-white'
                           : 'bg-slate-200 text-slate-600'
@@ -392,6 +441,28 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                     onSelect={(p) => setDetailProduct(p)}
                   />
                 ))}
+              </div>
+            )}
+
+            {/* Floating Quick Cart Bar when items are selected */}
+            {cartCount > 0 && (
+              <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 w-full max-w-md px-4 pointer-events-none">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('CART')}
+                  className="pointer-events-auto w-full bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white py-3 px-4 sm:px-5 rounded-2xl shadow-xl shadow-emerald-900/20 flex items-center justify-between font-bold text-xs sm:text-sm transition-all cursor-pointer"
+                >
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20 flex items-center justify-center text-[11px] sm:text-xs font-black">
+                      {cartCount}
+                    </span>
+                    <span>Keranjang Belanja</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>{formatRupiah(cartTotal)}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </button>
               </div>
             )}
 
