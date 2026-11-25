@@ -63,7 +63,7 @@ export const CanteenLocationSection: React.FC = () => {
           </div>
 
           <div className="pt-3 border-t border-slate-200 text-xs text-slate-400">
-            Kantin Sekolah • Rekayasa Perangkat Lunak (RPL)
+            Kantin Pintar Era Digital
           </div>
         </div>
 

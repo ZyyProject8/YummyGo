@@ -165,7 +165,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 py-6 text-xs text-slate-400 text-center">
-        <p>© {new Date().getFullYear()} YummyGo! — Projek Rekayasa Perangkat Lunak (RPL)</p>
+        <p>© {new Date().getFullYear()} YummyGo! — Kantin Pintar Sekolah</p>
       </footer>
 
     </div>

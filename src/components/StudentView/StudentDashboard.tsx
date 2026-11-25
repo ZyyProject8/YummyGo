@@ -642,7 +642,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                           required
                           value={customerClass}
                           onChange={(e) => setCustomerClass(e.target.value)}
-                          placeholder="Masukkan kelas / jurusan (misal: XII RPL 1)"
+                          placeholder="Masukkan kelas / jurusan"
                           className="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-slate-900 outline-none"
                         />
                       </div>

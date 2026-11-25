@@ -66,7 +66,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     }
 
     if (!customerClass.trim()) {
-      setFormError('Harap isi Kelas / Jurusan (Contoh: XII RPL 1)');
+      setFormError('Harap isi Kelas / Jurusan');
       return;
     }
 
@@ -290,7 +290,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       <input
                         type="text"
                         required
-                        placeholder="Contoh: XII RPL 1"
+                        placeholder="Masukkan kelas / jurusan"
                         value={customerClass}
                         onChange={(e) => setCustomerClass(e.target.value)}
                         className="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"

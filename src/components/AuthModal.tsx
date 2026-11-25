@@ -216,7 +216,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     <input
                       type="text"
                       required
-                      placeholder="Masukkan kelas / jurusan (misal: XII RPL 1)"
+                      placeholder="Masukkan kelas / jurusan"
                       value={studentClass}
                       onChange={(e) => setStudentClass(e.target.value)}
                       className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 focus:ring-1 focus:ring-slate-900 outline-none text-xs sm:text-sm bg-white"
