@@ -1,46 +1,18 @@
 import { Product, CanteenSettings } from '../types';
 
 export const INITIAL_SETTINGS: CanteenSettings = {
-  stallName: "YummyGo! Smart Canteen",
+  stallName: "Kantin Sekolah",
   isOpen: true,
   openTime: "07:00",
   closeTime: "15:30",
-  pickupLocation: "Loket Utama 1 & 2 (Gedung Kantin Utama)",
-  announcement: "🎉 Selamat datang di YummyGo! Pesan online sekarang, tinggal ambil tanpa antre saat jam istirahat tiba!",
+  pickupLocation: "Loket Utama Kantin Sekolah",
+  announcement: "Pesan makanan & minuman secara online, ambil langsung di loket saat jam istirahat!",
   qrisMerchantName: "YUMMYGO KANTIN SEKOLAH",
   qrisNmid: "ID1020083921932",
   adminPassword: "kantin123"
 };
 
-export const DEFAULT_STUDENTS = [
-  {
-    id: "std-1",
-    nis: "202401",
-    name: "Budi Santoso",
-    studentClass: "XII RPL 1",
-    phone: "081234567890",
-    password: "123",
-    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80"
-  },
-  {
-    id: "std-2",
-    nis: "202402",
-    name: "Siti Rahmawati",
-    studentClass: "XI MIPA 2",
-    phone: "081987654321",
-    password: "123",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
-  },
-  {
-    id: "std-3",
-    nis: "202403",
-    name: "Rian Pratama",
-    studentClass: "X DKV 3",
-    phone: "085712345678",
-    password: "123",
-    avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=200&q=80"
-  }
-];
+export const DEFAULT_STUDENTS: any[] = [];
 
 export const INITIAL_PRODUCTS: Product[] = [
   // ================= MAKANAN =================

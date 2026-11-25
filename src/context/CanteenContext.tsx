@@ -65,25 +65,30 @@ export const CanteenProvider: React.FC<{ children: React.ReactNode }> = ({ child
     } catch (e) {
       console.error(e);
     }
-    return DEFAULT_STUDENTS;
+    return [];
   });
 
   // Current logged in student
   const [currentStudent, setCurrentStudent] = useState<StudentUser | null>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.CURRENT_STUDENT);
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && parsed.name !== 'Budi Santoso') {
+          return parsed;
+        }
+      }
     } catch (e) {
       console.error(e);
     }
-    return DEFAULT_STUDENTS[0]; // Default logged in as Budi Santoso
+    return null;
   });
 
   // Current staff user
   const [currentStaff] = useState<StaffUser>({
     id: 'staff-1',
     username: 'kantin',
-    name: 'Ibu Nurul (Staf Kasir)',
+    name: 'Staf Kantin',
     roleTitle: 'Pengelola Kantin & Kasir',
   });
 
